@@ -8,3 +8,14 @@ The [C# Artemis ECS framework](https://github.com/thelinuxlich/artemis_CSharp) w
 The map was built with [Tiled](http://www.mapeditor.org/) and is loaded with [XTiled](https://bitbucket.org/vinull/xtiled).
 
 The Link sprites were found [here](http://gregarlink10.deviantart.com/art/Skyward-Sword-Link-sprites-275694168).
+
+Controls
+--------
+
+|    Key     |  Function   |
+| ---------: | :-----------|
+|        `S` | Go left     |
+|        `F` | Go right    |
+|        `E` | Jump        |
+| `Spacebar` | Hold to run |  
+|      `Esc` | Quit        |  
