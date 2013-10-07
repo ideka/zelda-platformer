@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="System.Collections.Generic.Dictionary[string, ZeldaPlatformerLibrary.Components.MetaSprite]">
+    <Item>
+      <Key>spr/Link/Attack</Key>
+      <Value>
+        <Speed>20 20 20 20 20</Speed>
+        <Anchor>49 56</Anchor>
+      </Value>
+    </Item>
+    <Item>
+      <Key>spr/Link/Fall</Key>
+      <Value>
+         <Speed>6.7 6.7</Speed>
+         <Anchor>20 61</Anchor>
+      </Value>
+    </Item>
+    <Item>
+      <Key>spr/Link/Jump</Key>
+      <Value>
+        <Speed>6.7 6.7</Speed>
+        <Anchor>18 62</Anchor>
+      </Value>
+    </Item>
+    <Item>
+      <Key>spr/Link/JumpFwd</Key>
+      <Value>
+        <Speed>6.7 6.7 6.7 6.7</Speed>
+        <Anchor>28 44</Anchor>
+      </Value>
+    </Item>
+    <Item>
+      <Key>spr/Link/Run</Key>
+      <Value>
+        <Speed>10 10 10 10 10 10 10 10</Speed>
+        <Anchor>28 44</Anchor>
+      </Value>
+    </Item>
+    <Item>
+      <Key>spr/Link/Skid</Key>
+      <Value>
+        <Speed>6.7 6.7</Speed>
+        <Anchor>26 48</Anchor>
+      </Value>
+    </Item>
+    <Item>
+      <Key>spr/Link/Stand</Key>
+      <Value>
+        <Speed>6.7 6.7 6.7 6.7</Speed>
+        <Anchor>16 56</Anchor>
+      </Value>
+    </Item>
+    <Item>
+      <Key>spr/Link/Walk</Key>
+      <Value>
+        <Speed>6.7 6.7 6.7 6.7 6.7 6.7</Speed>
+        <Anchor>15 52</Anchor>
+      </Value>
+    </Item>
+  </Asset>
+</XnaContent>

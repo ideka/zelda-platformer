@@ -1,0 +1,967 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FuncWorks.XNA.XTiled</name>
+    </assembly>
+    <members>
+        <member name="T:FuncWorks.XNA.XTiled.Tile">
+            <summary>
+            Represents a source tile image's metadata
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tile.TilesetID">
+            <summary>
+            Index of the Tileset in the Map.Tilesets collection this tile belongs to
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tile.Properties">
+            <summary>
+            Custom properties
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tile.Source">
+            <summary>
+            Area in the texture of the tileset that represents this tile
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tile.Origin">
+            <summary>
+            Origin of this tile for rendering; set to the center of the tile
+            </summary>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.TileLayerList">
+            <summary>
+            List of TileLayers, indexable by id or name
+            </summary>
+        </member>
+        <member name="P:FuncWorks.XNA.XTiled.TileLayerList.Item(System.String)">
+            <summary>
+            Gets the layer with the given name; read-only propery.
+            </summary>
+            <param name="name">Name of the layer</param>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.ObjectLayerList">
+            <summary>
+            List of ObjectLayer, indexable by id or name
+            </summary>
+        </member>
+        <member name="P:FuncWorks.XNA.XTiled.ObjectLayerList.Item(System.String)">
+            <summary>
+            Gets the layer with the given name; read-only propery.
+            </summary>
+            <param name="name">Name of the layer</param>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.ObjectLayer">
+            <summary>
+            Represents an object layer
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.ObjectLayer.Name">
+            <summary>
+            Optional name of the layer
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.ObjectLayer.Opacity">
+            <summary>
+            Opacity of the layer, 1 is opaque and 0 is complete transparent
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.ObjectLayer.OpacityColor">
+            <summary>
+            A color value of white, with the alpha component set to the layer Opacity
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.ObjectLayer.Visible">
+            <summary>
+            True if the layer is visible
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.ObjectLayer.Properties">
+            <summary>
+            Custom properties
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.ObjectLayer.Color">
+            <summary>
+            Optional color for the layer, alpha is set to the value of Opacity
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.ObjectLayer.MapObjects">
+            <summary>
+            Collection of objects on this layer
+            </summary>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.MapObject">
+            <summary>
+            Represents an object in an ObjectLayer
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.MapObject.Name">
+            <summary>
+            Optional name of the object
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.MapObject.Type">
+            <summary>
+            Optional type of the object
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.MapObject.Bounds">
+            <summary>
+            Map location of the object in pixles
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.MapObject.TileID">
+            <summary>
+            Optional image tile index in the Map.SourceTiles collection
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.MapObject.Visible">
+            <summary>
+            True if the object is visible.  Possible in the TMX map format, but no UI exists for the user to change.
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.MapObject.Properties">
+            <summary>
+            Custom properties for this object
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.MapObject.Polygon">
+            <summary>
+            A sequence of lines that form a closed shape; can be null if there is no Polygon with this object
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.MapObject.Polyline">
+            <summary>
+            A sequence of lines; can be null if there is no Polyline with this object
+            </summary>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.MapOrientation">
+            <summary />
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.MapOrientation.Orthogonal">
+            <summary />
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.MapOrientation.Isometric">
+            <summary />
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.LayerType">
+            <summary />
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.LayerType.TileLayer">
+            <summary />
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.LayerType.ObjectLayer">
+            <summary />
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.LayerInfo">
+            <summary>
+            References either a TileLayer or ObjectLayer
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.LayerInfo.ID">
+            <summary>
+            The Layer Index/ID
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.LayerInfo.LayerType">
+            <summary>
+            They type of layer
+            </summary>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.Map">
+            <summary>
+            An XTiled TMX Map
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.Orientation">
+            <summary>
+            Orientation of the map.
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.Width">
+            <summary>
+            Width, in tiles, of the map
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.Height">
+            <summary>
+            Height, in tiles, of the map
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.TileWidth">
+            <summary>
+            Pixel width of a single tile
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.TileHeight">
+            <summary>
+            Pixel height of a single tile
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.Bounds">
+            <summary>
+            Size of the map in pixels
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.Tilesets">
+            <summary>
+            Tilesets associated with this map
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.Properties">
+            <summary>
+            Custom properties
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.TileLayers">
+            <summary>
+            Ordered collection of tile layers; first is the bottom layer
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.ObjectLayers">
+            <summary>
+            Ordered collection of object layers; first is the bottom layer
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.SourceTiles">
+            <summary>
+            List of all source tiles from tilesets
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.LoadTextures">
+            <summary>
+            True if XTiled loaded tileset textures during map load
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Map.LayerOrder">
+            <summary>
+            Order of tile and object layers combined, first is the bottom layer
+            </summary>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.InitObjectDrawing(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+            <summary>
+            Enables rendering of map objects
+            </summary>
+            <param name="graphicsDevice">The graphics device to us in creating textures to support object rendering</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Draws all visible tile layers
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="region">Region of the map in pixels to draw</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Draws all visible tile layers
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="region">Region of the map in pixels to draw</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Rectangle,System.Boolean)">
+            <summary>
+            Draws all visible tile layers
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="region">Region of the map in pixels to draw</param>
+            <param name="drawHiddenLayers">If true, draws layers regardless of TileLayer.Visible flag</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Rectangle@,System.Boolean)">
+            <summary>
+            Draws all visible tile layers
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="region">Region of the map in pixels to draw</param>
+            <param name="drawHiddenLayers">If true, draws layers regardless of TileLayer.Visible flag</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.DrawLayer(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32,Microsoft.Xna.Framework.Rectangle,System.Single)">
+            <summary>
+            Draws given tile layer
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="layerID">Index of the layer to draw in the Map.TileLayers collection</param>
+            <param name="region">Region of the map in pixels to draw</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.DrawLayer(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32,Microsoft.Xna.Framework.Rectangle@,System.Single)">
+            <summary>
+            Draws given tile layer
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="layerID">Index of the layer to draw in the Map.TileLayers collection</param>
+            <param name="region">Region of the map in pixels to draw</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.DrawObjectLayer(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32,Microsoft.Xna.Framework.Rectangle,System.Single)">
+            <summary>
+            Draws all objects on the given object layer
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="objectLayerID">Index of the layer to draw in the Map.ObjectLayers collection</param>
+            <param name="region">Region of the map in pixels to draw</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.DrawObjectLayer(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32,Microsoft.Xna.Framework.Rectangle@,System.Single)">
+            <summary>
+            Draws all objects on the given object layer
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="objectLayerID">Index of the layer to draw in the Map.ObjectLayers collection</param>
+            <param name="region">Region of the map in pixels to draw</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.DrawTileObject(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32,System.Int32,Microsoft.Xna.Framework.Rectangle,System.Single,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Method to draw a MapObject that represents a tile object
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="objectLayerID">Index of the layer to draw in the Map.ObjectLayers collection</param>
+            <param name="objectID">Index of the object to draw in the Map.ObjectLayers.MapObjects collection</param>
+            <param name="region">Region of the map in pixels to draw</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+            <param name="color">Color of the object</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.DrawTileObject(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32,System.Int32,Microsoft.Xna.Framework.Rectangle@,System.Single,Microsoft.Xna.Framework.Color@)">
+            <summary>
+            Method to draw a MapObject that represents a tile object
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="objectLayerID">Index of the layer to draw in the Map.ObjectLayers collection</param>
+            <param name="objectID">Index of the object to draw in the Map.ObjectLayers.MapObjects collection</param>
+            <param name="region">Region of the map in pixels to draw</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+            <param name="color">Color of the object</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.DrawMapObject(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32,System.Int32,Microsoft.Xna.Framework.Rectangle,System.Single)">
+            <summary>
+            Method to draw a MapObject
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="objectLayerID">Index of the layer to draw in the Map.ObjectLayers collection</param>
+            <param name="objectID">Index of the object to draw in the Map.ObjectLayers.MapObjects collection</param>
+            <param name="region">Region of the map in pixels to draw</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+            <param name="color">Color of the object</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.DrawMapObject(Microsoft.Xna.Framework.Graphics.SpriteBatch,System.Int32,System.Int32,Microsoft.Xna.Framework.Rectangle@,System.Single)">
+            <summary>
+            Method to draw a MapObject
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="objectLayerID">Index of the layer to draw in the Map.ObjectLayers collection</param>
+            <param name="objectID">Index of the object to draw in the Map.ObjectLayers.MapObjects collection</param>
+            <param name="region">Region of the map in pixels to draw</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+            <param name="color">Color of the object</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.DrawRectangle(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle,System.Single,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Method to draw a Rectangle
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="rect">The Rectangle to draw, in map pixels</param>
+            <param name="region">Region of the map in pixels currently visible</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+            <param name="linecolor">Color of the Rectangle border</param>
+            <param name="fillColor">Color to fill the Rectangle with</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.DrawRectangle(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Rectangle@,Microsoft.Xna.Framework.Rectangle@,System.Single,Microsoft.Xna.Framework.Color@,Microsoft.Xna.Framework.Color@)">
+            <summary>
+            Method to draw a Rectangle
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="rect">The Rectangle to draw, in map pixels</param>
+            <param name="region">Region of the map in pixels currently visible</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+            <param name="linecolor">Color of the Rectangle border</param>
+            <param name="fillColor">Color to fill the Rectangle with</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.Translate(Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Translates a location to screen space
+            </summary>
+            <param name="location">The location in map pixel coordinates</param>
+            <param name="relativeTo">Region of the map that is on screen</param>
+            <returns>A location converted to screen space</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.Translate(Microsoft.Xna.Framework.Rectangle@,Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Translates a location to screen space
+            </summary>
+            <param name="location">The location in map pixel coordinates</param>
+            <param name="relativeTo">Region of the map that is on screen</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.Translate(Microsoft.Xna.Framework.Point,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Translates a location to screen space
+            </summary>
+            <param name="location">The location in map pixel coordinates</param>
+            <param name="relativeTo">Region of the map that is on screen</param>
+            <returns>A location converted to screen space</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.Translate(Microsoft.Xna.Framework.Point@,Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Translates a location to screen space
+            </summary>
+            <param name="location">The location in map pixel coordinates</param>
+            <param name="relativeTo">Region of the map that is on screen</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.Translate(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Translates a location to screen space
+            </summary>
+            <param name="location">The location in map pixel coordinates</param>
+            <param name="relativeTo">Region of the map that is on screen</param>
+            <returns>A location converted to screen space</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.Translate(Microsoft.Xna.Framework.Vector2@,Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Translates a location to screen space
+            </summary>
+            <param name="location">The location in map pixel coordinates</param>
+            <param name="relativeTo">Region of the map that is on screen</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.GetObjectsInRegion(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Returns a collection of MapObjects inside the given region
+            </summary>
+            <param name="region">The region, in pixles, to check</param>
+            <returns>Collection of matching MapObjects</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.GetObjectsInRegion(Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Returns a collection of MapObjects inside the given region
+            </summary>
+            <param name="region">The region, in pixles, to check</param>
+            <returns>Collection of matching MapObjects</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.GetObjectsInRegion(System.Int32,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Returns a collection of MapObjects inside the given region
+            </summary>
+            <param name="objectLayerID">The object layer to check</param>
+            <param name="region">The region, in pixles, to check</param>
+            <returns>Collection of matching MapObjects</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.GetObjectsInRegion(System.Int32,Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Returns a collection of MapObjects inside the given region
+            </summary>
+            <param name="objectLayerID">The object layer to check</param>
+            <param name="region">The region, in pixles, to check</param>
+            <returns>Collection of matching MapObjects</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.GetTilesInRegion(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Returns a collection of TileData inside the given region
+            </summary>
+            <param name="region">The region, in pixles, to check</param>
+            <returns>Collection of matching TileData</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.GetTilesInRegion(Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Returns a collection of TileData inside the given region
+            </summary>
+            <param name="region">The region, in pixles, to check</param>
+            <returns>Collection of matching TileData</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.GetTilesInRegion(System.Int32,Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Returns a collection of TileData inside the given region
+            </summary>
+            <param name="tileLayerID">The tile layer to check</param>
+            <param name="region">The region, in pixles, to check</param>
+            <returns>Collection of matching TileData</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Map.GetTilesInRegion(System.Int32,Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Returns a collection of TileData inside the given region
+            </summary>
+            <param name="tileLayerID">The tile layer to check</param>
+            <param name="region">The region, in pixles, to check</param>
+            <returns>Collection of matching TileData</returns>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.Tileset">
+            <summary>
+            Represents a tileset (aka tile sheet) in a Map
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.Name">
+            <summary>
+            Optional name of the tileset
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.TileWidth">
+            <summary>
+            Width of a single tile in pixels
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.TileHeight">
+            <summary>
+            Height of a single tile in pixels
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.Spacing">
+            <summary>
+            Spacing between tiles in pixels
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.Margin">
+            <summary>
+            Outside margin of the tilesheet in pixels
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.TileOffsetX">
+            <summary>
+            Horizontal offset of tiles
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.TileOffsetY">
+            <summary>
+            Vertical offset of tiles
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.Properties">
+            <summary>
+            Custom properties
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.Tiles">
+            <summary>
+            List of tiles in this tilesheet
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.ImageFileName">
+            <summary>
+            Full path of the image referenced in the TMX file
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.ImageTransparentColor">
+            <summary>
+            Transparent color as set in the Tiled editor; null if not set
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.ImageWidth">
+            <summary>
+            Width of image in pixels
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.ImageHeight">
+            <summary>
+            Height of image in pixels
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Tileset.Texture">
+            <summary>
+            Image as an XNA Texture2D instance; null if Map.LoadTextures is false
+            </summary>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.Polyline">
+            <summary>
+            A sequence of lines
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Polyline.Points">
+            <summary>
+            The points that make up the polyline, in order
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Polyline.Lines">
+            <summary>
+            The lines that make up the polyline, in order
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Polyline.Bounds">
+            <summary>
+            Bounding rectangle of this polyline
+            </summary>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polyline.FromPoints(System.Collections.Generic.IEnumerable{Microsoft.Xna.Framework.Point})">
+            <summary>
+            Creates a Polyline from a list of points and calculates the lines and bounds of the result
+            </summary>
+            <param name="points">The list of points that define the polyline</param>
+            <returns>a Polyline object</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polyline.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Color,System.Single)">
+            <summary>
+            Draws the lines that make up the Polyline
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="region">Region of the map in pixels to draw</param> 
+            <param name="texture">A texture to use in drawing the lines</param>
+            <param name="lineWidth">The width of the lines in pixels</param>
+            <param name="color">The color value to apply to the given texture</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polyline.Intersects(Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Determines if a specificed Rectangle intersects with this Polyline
+            </summary>
+            <param name="rect">Rectangle to compare to</param>
+            <returns>True if the Rectangle intersects</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polyline.Intersects(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Determines if a specificed Rectangle intersects with this Polyline
+            </summary>
+            <param name="rect">Rectangle to compare to</param>
+            <returns>True if the Rectangle intersects</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polyline.Intersects(FuncWorks.XNA.XTiled.Line@)">
+            <summary>
+            Determines if a specificed Line intersects with this Polyline
+            </summary>
+            <param name="line">Line to compare to</param>
+            <returns>True if the Line intersects</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polyline.Intersects(FuncWorks.XNA.XTiled.Line)">
+            <summary>
+            Determines if a specificed Line intersects with this Polyline
+            </summary>
+            <param name="line">Line to compare to</param>
+            <returns>True if the Line intersects</returns>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.Polygon">
+            <summary>
+            A sequence of lines that form a closed shape
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Polygon.Texture">
+            <summary>
+            A texture representing the polygon, must be first created by calling GenerateTexure
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Polygon.Points">
+            <summary>
+            The points that make up the polygon, in order
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Polygon.Lines">
+            <summary>
+            The lines that make up the polygon, in order
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Polygon.Bounds">
+            <summary>
+            Bounding rectangle of this Polygon
+            </summary>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.FromPoints(System.Collections.Generic.IEnumerable{Microsoft.Xna.Framework.Point})">
+            <summary>
+            Creates a Polygon from a list of points and calculates the lines and bounds of the result
+            </summary>
+            <param name="points">The list of points that define the polygon; the last point must be the same as the first to close the polygon</param>
+            <returns>a Polygon object</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.GenerateTexture(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Initializes the Polygon.Texture field
+            </summary>
+            <param name="graphicsDevice">GraphicsDevice to create the texture on</param>
+            <param name="color">Color for the polygon</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Color,System.Single)">
+            <summary>
+            Draws the lines that make up the Polygon
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="region">Region of the map in pixels to draw</param> 
+            <param name="texture">A texture to use in drawing the lines</param>
+            <param name="lineWidth">The width of the lines in pixels</param>
+            <param name="color">The color value to apply to the given texture</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.DrawFilled(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Color,Microsoft.Xna.Framework.Color,System.Single)">
+            <summary>
+            Draws the lines that make up the Polygon
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="region">Region of the map in pixels to draw</param> 
+            <param name="texture">A texture to use in drawing the lines</param>
+            <param name="lineWidth">The width of the lines in pixels</param>
+            <param name="color">The color value to apply to the polgon lines</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+            <param name="fillColor">The color value to fill the polygon</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Contains(Microsoft.Xna.Framework.Vector2@)">
+            <summary>
+            Determines if a Vector2 is inside this Polygon
+            </summary>
+            <param name="vector">Vector2 to compare to</param>
+            <returns>True if the Vector2 is inside the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Contains(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Determines if a Vector2 is inside this Polygon
+            </summary>
+            <param name="vector">Vector2 to compare to</param>
+            <returns>True if the Vector2 is inside the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Contains(Microsoft.Xna.Framework.Point@)">
+            <summary>
+            Determines if a Point is inside this Polygon
+            </summary>
+            <param name="point">Point to compare to</param>
+            <returns>True if the Point is inside the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Contains(Microsoft.Xna.Framework.Point)">
+            <summary>
+            Determines if a Point is inside this Polygon
+            </summary>
+            <param name="point">Point to compare to</param>
+            <returns>True if the Point is inside the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Contains(FuncWorks.XNA.XTiled.Line@)">
+            <summary>
+            Determines if a Line is inside this Polygon; a Line is considered inside if both Start and End points are inside
+            </summary>
+            <param name="line">Line to compare to</param>
+            <returns>True if the Line is inside the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Contains(FuncWorks.XNA.XTiled.Line)">
+            <summary>
+            Determines if a Line is inside this Polygon; a Line is considered inside if both Start and End points are inside
+            </summary>
+            <param name="line">Line to compare to</param>
+            <returns>True if the Line is inside the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Contains(Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Determines if a Rectangle is inside this Polygon; a Rectangle is considered inside if all four corners are inside
+            </summary>
+            <param name="rect">Rectangle to compare to</param>
+            <returns>True if the Rectangle is inside the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Contains(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Determines if a Rectangle is inside this Polygon; a Rectangle is considered inside if all four corners are inside
+            </summary>
+            <param name="rect">Rectangle to compare to</param>
+            <returns>True if the Rectangle is inside the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Intersects(Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Determines if a Rectangle intersects this Polygon; a Rectangle is considered to intersect if at least one corner is contained but not all four corners are contained
+            </summary>
+            <param name="rect">Rectangle to compare to</param>
+            <returns>True if the Rectangle is intersects the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Intersects(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Determines if a Rectangle intersects this Polygon; a Rectangle is considered to intersect if at least one corner is contained but not all four corners are contained
+            </summary>
+            <param name="rect">Rectangle to compare to</param>
+            <returns>True if the Rectangle is intersects the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Intersects(FuncWorks.XNA.XTiled.Line@)">
+            <summary>
+            Determines if a Line intersects this Polygon; a Line is considered to intersect if one but not both points are contained
+            </summary>
+            <param name="line">Line to compare to</param>
+            <returns>True if the Line is intersects the Polygon</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Polygon.Intersects(FuncWorks.XNA.XTiled.Line)">
+            <summary>
+            Determines if a Line intersects this Polygon; a Line is considered to intersect if one but not both points are contained
+            </summary>
+            <param name="line">Line to compare to</param>
+            <returns>True if the Line is intersects the Polygon</returns>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.MapReader">
+            <summary/>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.MapReader.Read(Microsoft.Xna.Framework.Content.ContentReader,FuncWorks.XNA.XTiled.Map)">
+            <summary/>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.TileLayer">
+            <summary>
+            Represents an tile layer
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.TileLayer.Name">
+            <summary>
+            Optional name of the layer
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.TileLayer.Opacity">
+            <summary>
+            Opacity of the layer, 1 is opaque and 0 is complete transparent
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.TileLayer.OpacityColor">
+            <summary>
+            A color value of white, with the alpha component set to the layer Opacity
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.TileLayer.Visible">
+            <summary>
+            True if the layer is visible
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.TileLayer.Properties">
+            <summary>
+            Custom properties
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.TileLayer.Tiles">
+            <summary>
+            Collection of tiles on this layer
+            </summary>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.Property">
+            <summary>
+            Represents a custom property value
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Property.Value">
+            <summary>
+            Raw String value of the propery
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Property.AsSingle">
+            <summary>
+            Value converted to a float, null if conversion failed
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Property.AsInt32">
+            <summary>
+            Value converted to an int, null if conversion failed
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Property.AsBoolean">
+            <summary>
+            Value converted to a boolean, null if conversion failed
+            </summary>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Property.Create(System.String)">
+            <summary>
+            Creates a property from a raw string value
+            </summary>
+            <param name="value">Value of the property</param>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.Line">
+            <summary>
+            A list of two points that define a line
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Line.Start">
+            <summary>
+            The starting point of the line
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Line.End">
+            <summary>
+            The ending point of the line
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Line.Length">
+            <summary>
+            Length of the line
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.Line.Angle">
+            <summary>
+            Rotation of the line, suitable for using with SpriteBatch
+            </summary>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Line.FromPoints(Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Create a line from start and end points and calculate the length and angle
+            </summary>
+            <param name="start">The first point of the line</param>
+            <param name="end">The end of the line</param>
+            <returns>A Line created from the points</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Line.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,FuncWorks.XNA.XTiled.Line,Microsoft.Xna.Framework.Rectangle,Microsoft.Xna.Framework.Graphics.Texture2D,System.Single,Microsoft.Xna.Framework.Color,System.Single)">
+            <summary>
+            Draws a Line
+            </summary>
+            <param name="spriteBatch">XNA SpriteBatch instance; SpriteBatch.Begin() must be called before using this method</param>
+            <param name="line">The Line to draw</param>
+            <param name="region">Region of the map in pixels to draw</param> 
+            <param name="texture">A texture to use in drawing the line</param>
+            <param name="lineWidth">The width of the line in pixels</param>
+            <param name="color">The color value to apply to the given texture</param>
+            <param name="layerDepth">LayerDepth value to pass to SpriteBatch</param>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Line.Intersects(FuncWorks.XNA.XTiled.Line)">
+            <summary>
+            Determines if a specificed Line intersects with this Line
+            </summary>
+            <param name="line">Line to compare to</param>
+            <returns>True if the lines intersect</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Line.Intersects(FuncWorks.XNA.XTiled.Line@)">
+            <summary>
+            Determines if a specificed Line intersects with this Line
+            </summary>
+            <param name="line">Line to compare to</param>
+            <returns>True if the lines intersect</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Line.Intersects(FuncWorks.XNA.XTiled.Line,Microsoft.Xna.Framework.Vector2@)">
+            <summary>
+            Determines if a specificed Line intersects with this Line
+            </summary>
+            <param name="line">Line to compare to</param>
+            <param name="intersection">If the lines intersect this will be set to the point of intersection</param>
+            <returns>True if the lines intersect</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Line.Intersects(FuncWorks.XNA.XTiled.Line@,Microsoft.Xna.Framework.Vector2@)">
+            <summary>
+            Determines if a specificed Line intersects with this Line
+            </summary>
+            <param name="line">Line to compare to</param>
+            <param name="intersection">If the lines intersect this will be set to the point of intersection</param>
+            <returns>True if the lines intersect</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Line.Intersects(Microsoft.Xna.Framework.Rectangle)">
+            <summary>
+            Determines if a specificed Rectangle intersects with this Line
+            </summary>
+            <param name="rect">Rectangle to compare to</param>
+            <returns>True if the Rectangle intersects</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Line.Intersects(Microsoft.Xna.Framework.Rectangle@)">
+            <summary>
+            Determines if a specificed Rectangle intersects with this Line
+            </summary>
+            <param name="rect">Rectangle to compare to</param>
+            <returns>True if the Rectangle intersects</returns>
+        </member>
+        <member name="M:FuncWorks.XNA.XTiled.Line.Intersects(FuncWorks.XNA.XTiled.Line@,System.Boolean@,Microsoft.Xna.Framework.Vector2@)">
+            <summary>
+            Determines if a specificed Line intersects with this Line
+            </summary>
+            <param name="line">Line to compare to</param>
+            <param name="result">True if the lines intersect</param>
+            <param name="intersection">If the lines intersect this will be set to the point of intersection</param>
+        </member>
+        <member name="T:FuncWorks.XNA.XTiled.TileData">
+            <summary>
+            Represents a placed tiled on the map
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.TileData.SourceID">
+            <summary>
+            Index of the source tile in the Map.SourceTiles collection
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.TileData.Effects">
+            <summary>
+            Horizontal and/or vertical flipping state of the placed tile
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.TileData.Target">
+            <summary>
+            Location in pixels of the tile on the map
+            </summary>
+        </member>
+        <member name="F:FuncWorks.XNA.XTiled.TileData.Rotation">
+            <summary>
+            Rotation of the placed tile, in radians
+            </summary>
+        </member>
+    </members>
+</doc>

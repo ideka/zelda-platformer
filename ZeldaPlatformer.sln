@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeldaPlatformer", "ZeldaPlatformer\ZeldaPlatformer.csproj", "{7C162E3A-7E33-4A44-9C11-E44D31777E09}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C21A0AE8-0B06-48ED-BE37-3588D42E9D3F} = {C21A0AE8-0B06-48ED-BE37-3588D42E9D3F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeldaPlatformerContent", "ZeldaPlatformerContent\ZeldaPlatformerContent.contentproj", "{C2CDF30E-2907-4598-BE4C-C5E8BF841D56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeldaPlatformerLibrary", "ZeldaPlatformerLibrary\ZeldaPlatformerLibrary.csproj", "{C21A0AE8-0B06-48ED-BE37-3588D42E9D3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C162E3A-7E33-4A44-9C11-E44D31777E09}.Debug|x86.ActiveCfg = Debug|x86
+		{7C162E3A-7E33-4A44-9C11-E44D31777E09}.Debug|x86.Build.0 = Debug|x86
+		{7C162E3A-7E33-4A44-9C11-E44D31777E09}.Release|x86.ActiveCfg = Release|x86
+		{7C162E3A-7E33-4A44-9C11-E44D31777E09}.Release|x86.Build.0 = Release|x86
+		{C2CDF30E-2907-4598-BE4C-C5E8BF841D56}.Debug|x86.ActiveCfg = Debug|x86
+		{C2CDF30E-2907-4598-BE4C-C5E8BF841D56}.Release|x86.ActiveCfg = Release|x86
+		{C21A0AE8-0B06-48ED-BE37-3588D42E9D3F}.Debug|x86.ActiveCfg = Debug|x86
+		{C21A0AE8-0B06-48ED-BE37-3588D42E9D3F}.Debug|x86.Build.0 = Debug|x86
+		{C21A0AE8-0B06-48ED-BE37-3588D42E9D3F}.Release|x86.ActiveCfg = Release|x86
+		{C21A0AE8-0B06-48ED-BE37-3588D42E9D3F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
