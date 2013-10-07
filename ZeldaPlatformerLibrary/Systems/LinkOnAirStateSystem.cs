@@ -18,6 +18,7 @@
             typeof(EventSenderComponent),
             typeof(SpeedComponent),
             typeof(GoalSpeedComponent),
+            typeof(BinaryDirectionComponent),
             typeof(SpriteComponent)))
         {
         }
@@ -53,7 +54,8 @@
             if (speed.Speed.Y < 0)
             {
                 LinkWalkSpeedStateComponent walkSpeed = entity.GetComponent<LinkWalkSpeedStateComponent>();
-                if (Math.Abs(speed.SpeedX) > walkSpeed.MaxWalkSpeed)
+                BinaryDirectionComponent binaryDirection = entity.GetComponent<BinaryDirectionComponent>();
+                if (Math.Sign(speed.SpeedX) == (int)binaryDirection.Direction && Math.Abs(speed.SpeedX) > walkSpeed.MaxWalkSpeed)
                 {
                     sprite.Name = "spr/Link/JumpFwd";
                 }
