@@ -69,7 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllSystems.cs" />
-    <Compile Include="Components\CollisionComponent.cs" />
+    <Compile Include="Components\AABBComponent.cs" />
     <Compile Include="Components\ContentManagerComponent.cs" />
     <Compile Include="Components\BinaryDirectionComponent.cs" />
     <Compile Include="Components\LinkWalkSpeedStateComponent.cs" />
